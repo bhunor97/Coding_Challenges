@@ -1,18 +1,9 @@
 function century(year) {
-  if (year < 100) {
-    console.log(object);
+  if (year % 100 === 0) {
+    return year / 100;
+  } else {
+    return Math.floor(year / 100) + 1;
   }
 }
 
-century(564);
-
-// SAMPLE TESTS:
-// describe("Tests", () => {
-//     it("test", () => {
-//   Test.assertEquals(century(1705), 18, 'Testing for year 1705');
-//   Test.assertEquals(century(1900), 19, 'Testing for year 1900');
-//   Test.assertEquals(century(1601), 17, 'Testing for year 1601');
-//   Test.assertEquals(century(2000), 20, 'Testing for year 2000');
-//   Test.assertEquals(century(89), 1, 'Testing for year 89');
-//     });
-//   });
+century(1601);
