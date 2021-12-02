@@ -7,7 +7,7 @@ function getDecimal(n) {
       if (stringify[i] == ".") {
         let decimalCut = stringify.slice(i + 1, stringify.length);
         let zeroAdded = `0.${decimalCut}`;
-        return zeroAdded;
+        return parseFloat(zeroAdded);
       }
     }
   }
