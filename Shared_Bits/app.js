@@ -1,33 +1,26 @@
 function sharedBits(a, b) {
-  let bitA = BigInt(a).toString(2).padStart(4, "0");
-  let bitB = BigInt(b).toString(2).padStart(4, "0");
-  let both = bitA + bitB;
-  let count = 0;
-  for (let i = 0; i < both.length; i++) {
-    if (bitA[i] === "1" && bitB[i] === "1") {
-      count++;
-    } else {
-      null;
+  let binA = a.toString(2).padStart(8, "0");
+  let binB = b.toString(2).padStart(8, "0");
+  let shared = 0;
+  for (let i = 0; i < binA.length; i++) {
+    if (binA[i] == "1" && binB[i] == "1") {
+      shared++;
     }
   }
-  // if (count >= 2) {
-  //   return true;
-  // } else {
-  //   return false;
-  // }
-  console.log((bitA, bitB));
-  // console.log(count);
+  console.log(binA, binB);
+  console.log(shared);
+  return shared >= 2 ? true : false;
 }
 
-// console.log(sharedBits(16, 8));
-console.log(sharedBits(3288, 62758));
+console.log(sharedBits(3072, 1536));
+console.log(sharedBits(3213, 4197));
 
-// WRONG
-// 20 fixed tests
+// console.log(sharedBits(7, 10));
+// console.log(sharedBits(7, 15));
+// console.log(sharedBits(10, 15));
+
 // sharedBits(3072, 1536) should be equal false: expected true to equal false
-// Completed in 2ms
-// 1000 random tests
-// sharedBits(35078, 15780) should be equal true: expected false to equal true
+// sharedBits(3213, 4197) should be equal true: expected false to equal true
 
 // const chai = require("chai");
 // const assert = chai.assert;

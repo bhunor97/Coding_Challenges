@@ -1,30 +1,35 @@
 function validParentheses(parens) {
   let right = 0;
   let left = 0;
-  if (
-    parens.length % 2 != 0 ||
-    parens[0] == ")" ||
-    parens[parens.length - 1] == "("
-  ) {
-    return false;
-  } else if (parens == "()") {
-    return true;
-  } else {
-    for (let i = 0; i < parens.length; i++) {
-      if (parens[i] === "(") {
-        right++;
-      } else if (parens[i] === ")") {
-        left++;
-      }
-    }
-  }
-  if (right == left) {
-    return true;
-  } else {
-    return false;
-  }
+  let output = [];
+  // if (
+  //   parens.length % 2 != 0 ||
+  //   parens[0] == ")" ||
+  //   parens[parens.length - 1] == "("
+  // ) {
+  //   return false;
+  // } else if (parens == "()") {
+  //   return true;
+  // } else {
+  //   for (let i = 0; i < parens.length; i++) {
+  //     if (parens[i] === "(") {
+  //       right++;
+  //     } else if (parens[i] === ")") {
+  //       left++;
+  //     }
+  //   }
+  // }
+  // if (right == left) {
+  //   return true;
+  // } else {
+  //   return false;
+  // }
+  let arr = [];
+  let splitUp = parens.split("");
+  let status = false;
 }
 
+// console.log(validParentheses("(()())"));
 console.log(validParentheses("())(()"));
 // false^
 
